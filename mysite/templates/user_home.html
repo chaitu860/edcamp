@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       <title>edblock</title>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   <style>
+       #btn:hover{
+         background-color: rgb(195, 135, 238);
+       }
+   </style>
+   </head>
+   <body>
+       <script>
+           function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+}
+           </script>
+    {% include "nav.html" %}
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+  
+<div id="bitco" class="bg-primary ">
+  <table>
+    <tr>
+      <td>
+        <h1 class="text-light font-weight-bold">ED CAMP</h1>
+        <p style="width: 700px;" class="text-light font-weight-bold"> Ed camp is a free edu platform where creators can upload content for free related to various domains like machine learning
+        web development and so on... <br>
+      The best thing is viewers can support is by donating!:)<br><br></p>
+      </td>
+      
+      <td>
+        <img src="/static/bitco.svg" style="width: 400px;height: 500px;">
+      </td>
+    </tr>
+  </table>
+</div>
+<BR>
+<centeR><button class="btn btn-green" style="width: 100px ;height: 50px;" onclick="showDiv()">Content</button>
+  <button class="btn btn-green" style="width: 100px ;height: 50px;" onclick="location.href='{% url 'donate' %}'">Donate</button>
+
+</centeR>
+   
+
+      
+  <div >
+     
+      <div id="welcomeDiv"  style="display:none;" class="answer_list" > 
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{query.thumb_nail.url}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{query.title}}</h5>
+                <p class="card-text">{{query.description}}</p>
+                <a href="{% url 'play' pk=query.pk %}" class="btn btn-primary">Play</a>
+              </div>
+            </div>
+      </div>
+  </div>
+
+   </body>
+</html>
